@@ -1,0 +1,61 @@
+---
+import "@/styles/globals.css";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header />
+		<section
+			class="relative flex justify-center items-center h-96 w-full p-8 bg-black/50"
+		>
+			<h1 class="text-4xl font-bold text-center z-20 text-white/80">
+				Herramienta para medir la madurez de los controles de gestion de
+				acceso
+			</h1>
+			<picture class="absolute top-0 left-0 w-full h-full z-10">
+				<div class="absolute top-0 left-0 w-full h-full bg-black/50">
+				</div>
+				<img
+					class="w-full h-full object-cover"
+					src="../../public/access-management.jpg"
+					alt=""
+				/>
+			</picture>
+		</section>
+		<section class="flex justify-center items-start py-2 px-8 gap-4">
+			<aside class="flex flex-col gap-y-4 w-60">
+				<span class="font-bold">Componentes</span>
+				<ul class="flex flex-col justify-center items-start gap-y-2">
+					<li><a class="underline" href="tiposdeacceso">Tipos de Accesos</a></li>
+					<li>
+						<a class="underline" href="fasesdelciclodevida"
+							>Fases del ciclo de vida de un acceso</a
+						>
+					</li>
+					<li>
+						<a class="underline" href="matrizaplicabilidad">Matriz de aplicabilidad</a>
+					</li>
+				</ul>
+			</aside>
+			<slot />
+		</section>
+		<Footer />
+	</body>
+</html>

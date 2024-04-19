@@ -1,0 +1,38 @@
+---
+import Header from "@/components/Header.astro";
+import Button from "@/components/Button.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+---
+
+<Layout title="Herramienta de diagnostico">
+	<div class="flex-1 flex justify-center items-center flex-col gap-2">
+		<p>
+			El objetivo principal de este documento es proporcionar a los
+			usuarios una herramienta integral y eficiente para evaluar y
+			calificar el nivel de madurez de los controles generales de TI en su
+			organización.
+			<br />
+			<br />
+			Esta herramienta permite calificar la prioridad y riesgos asociados con
+			cada control de TI, identificar oportunidades de mejora y proponer planes
+			de acción correspondientes. Además, este documento brindará preguntas
+			de verificación para asegurar la comprensión y aplicación adecuada de
+			los controles, una serie de referencias documentales y herramientas prácticas
+			para facilitar su implementación y cumplimiento.
+			<br />
+			<br />
+			Así mismo, esta herramienta permite visualizar, por medio de un gráfico
+			de telaraña o radial, el nivel de madurez.
+			<br />
+			<br />
+			<strong>Descargar:</strong>
+		</p>
+
+		<Button />
+
+		<picture class="w-[42em] h-full">
+			<img src="../../public/maturitymodel.png" alt="" />
+		</picture>
+	</div>
+</Layout>

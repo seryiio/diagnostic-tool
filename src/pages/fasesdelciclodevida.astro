@@ -1,0 +1,377 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<style type="text/css">
+    html {
+        font-family: Calibri, Arial, Helvetica, sans-serif;
+        font-size: 11pt;
+        background-color: white;
+    }
+    a.comment-indicator:hover + div.comment {
+        background: #ffd;
+        position: absolute;
+        display: block;
+        border: 1px solid black;
+        padding: 0.5em;
+    }
+    a.comment-indicator {
+        background: red;
+        display: inline-block;
+        border: 1px solid black;
+        width: 0.5em;
+        height: 0.5em;
+    }
+    div.comment {
+        display: none;
+    }
+    table {
+        border-collapse: collapse;
+        page-break-after: always;
+    }
+    .gridlines td {
+        border: 1px dotted black;
+    }
+    .gridlines th {
+        border: 1px dotted black;
+    }
+    .b {
+        text-align: center;
+    }
+    .e {
+        text-align: center;
+    }
+    .f {
+        text-align: right;
+    }
+    .inlineStr {
+        text-align: left;
+    }
+    .n {
+        text-align: right;
+    }
+    .s {
+        text-align: left;
+    }
+    td.style0 {
+        vertical-align: bottom;
+        border-bottom: none #000000;
+        border-top: none #000000;
+        border-left: none #000000;
+        border-right: none #000000;
+        color: #000000;
+        font-family: "Calibri";
+        font-size: 11pt;
+        background-color: white;
+    }
+    th.style0 {
+        vertical-align: bottom;
+        border-bottom: none #000000;
+        border-top: none #000000;
+        border-left: none #000000;
+        border-right: none #000000;
+        color: #000000;
+        font-family: "Calibri";
+        font-size: 11pt;
+        background-color: white;
+    }
+    td.style1 {
+        vertical-align: middle;
+        text-align: center;
+        border-bottom: 3px solid #000000 !important;
+        border-top: 3px solid #000000 !important;
+        border-left: 3px solid #000000 !important;
+        border-right: 3px solid #000000 !important;
+        font-weight: bold;
+        color: #ffffff;
+        font-family: "Arial";
+        font-size: 11pt;
+        background-color: #000000;
+    }
+    th.style1 {
+        vertical-align: middle;
+        text-align: center;
+        border-bottom: 3px solid #000000 !important;
+        border-top: 3px solid #000000 !important;
+        border-left: 3px solid #000000 !important;
+        border-right: 3px solid #000000 !important;
+        font-weight: bold;
+        color: #ffffff;
+        font-family: "Arial";
+        font-size: 11pt;
+        background-color: #000000;
+    }
+    td.style2 {
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 0px;
+        border-bottom: 3px solid #000000 !important;
+        border-top: 3px solid #000000 !important;
+        border-left: 3px solid #000000 !important;
+        border-right: 3px solid #000000 !important;
+        font-weight: bold;
+        color: #ffffff;
+        font-family: "Arial";
+        font-size: 11pt;
+        background-color: #808080;
+    }
+    th.style2 {
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 0px;
+        border-bottom: 3px solid #000000 !important;
+        border-top: 3px solid #000000 !important;
+        border-left: 3px solid #000000 !important;
+        border-right: 3px solid #000000 !important;
+        font-weight: bold;
+        color: #ffffff;
+        font-family: "Arial";
+        font-size: 11pt;
+        background-color: #808080;
+    }
+    td.style3 {
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 0px;
+        border-bottom: 3px solid #000000 !important;
+        border-top: 3px solid #000000 !important;
+        border-left: 3px solid #000000 !important;
+        border-right: 3px solid #000000 !important;
+        color: #000000;
+        font-family: "Arial";
+        font-size: 11pt;
+        background-color: white;
+    }
+    th.style3 {
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 0px;
+        border-bottom: 3px solid #000000 !important;
+        border-top: 3px solid #000000 !important;
+        border-left: 3px solid #000000 !important;
+        border-right: 3px solid #000000 !important;
+        color: #000000;
+        font-family: "Arial";
+        font-size: 11pt;
+        background-color: white;
+    }
+    td.style4 {
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 0px;
+        border-bottom: 3px solid #000000 !important;
+        border-top: 3px solid #000000 !important;
+        border-left: 3px solid #000000 !important;
+        border-right: 3px solid #000000 !important;
+        color: #000000;
+        font-family: "Arial";
+        font-size: 11pt;
+        background-color: white;
+    }
+    th.style4 {
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 0px;
+        border-bottom: 3px solid #000000 !important;
+        border-top: 3px solid #000000 !important;
+        border-left: 3px solid #000000 !important;
+        border-right: 3px solid #000000 !important;
+        color: #000000;
+        font-family: "Arial";
+        font-size: 11pt;
+        background-color: white;
+    }
+    table.sheet0 col.col0 {
+        width: 20.3333331pt;
+    }
+    table.sheet0 col.col1 {
+        width: 49.47777721pt;
+    }
+    table.sheet0 col.col2 {
+        width: 256.87777483pt;
+    }
+    table.sheet0 tr {
+        height: 14.5pt;
+    }
+    table.sheet0 tr.row0 {
+        height: 15.5pt;
+    }
+    table.sheet0 tr.row1 {
+        height: 15.5pt;
+    }
+    table.sheet0 tr.row2 {
+        height: 29pt;
+    }
+    table.sheet0 tr.row3 {
+        height: 29pt;
+    }
+    table.sheet0 tr.row4 {
+        height: 29pt;
+    }
+    table.sheet0 tr.row5 {
+        height: 43pt;
+    }
+    table.sheet0 tr.row6 {
+        height: 43pt;
+    }
+    table.sheet0 tr.row7 {
+        height: 29pt;
+    }
+    table.sheet0 tr.row8 {
+        height: 29pt;
+    }
+    table.sheet0 tr.row9 {
+        height: 43pt;
+    }
+    table.sheet0 tr.row10 {
+        height: 43pt;
+    }
+    table.sheet0 tr.row11 {
+        height: 29pt;
+    }
+    table.sheet0 tr.row12 {
+        height: 57pt;
+    }
+    table.sheet0 tr.row13 {
+        height: 15pt;
+    }
+</style>
+
+<Layout title="Tipos de acceso">
+    <div class="flex-1 flex justify-center items-center flex-col gap-2">
+        <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            id="sheet0"
+            class="sheet0 gridlines"
+        >
+            <col class="col0" />
+            <col class="col1" />
+            <col class="col2" />
+            <tbody>
+                <tr class="row0">
+                    <td class="column0 style1 style1" colspan="3"
+                        >CICLO DE VIDA DE UN ACCESO<span
+                            style="color:#FFFFFF; font-family:'Arial'; font-size:11pt"
+                        >
+                        </span></td
+                    >
+                </tr>
+                <tr class="row1">
+                    <td class="column0 style2 s"
+                        >ID<span
+                            style="color:#FFFFFF; font-family:'Arial'; font-size:11pt"
+                        >
+                        </span></td
+                    >
+                    <td class="column1 style2 s"
+                        >FASE<span
+                            style="color:#FFFFFF; font-family:'Arial'; font-size:11pt"
+                        >
+                        </span></td
+                    >
+                    <td class="column2 style2 s"
+                        >DETALLE<span
+                            style="color:#FFFFFF; font-family:'Arial'; font-size:11pt"
+                        >
+                        </span></td
+                    >
+                </tr>
+                <tr class="row2">
+                    <td class="column0 style3 s style3" rowspan="2">F1 </td>
+                    <td class="column1 style3 s style3" rowspan="2">Crear </td>
+                    <td class="column2 style4 s"
+                        >En esta fase se crea y recopila los registros de los
+                        usuarios.
+                    </td>
+                </tr>
+                <tr class="row3">
+                    <td class="column2 style4 s"
+                        >Asimismo, se almacenan los datos de identificación y
+                        autenticación de los usuarios en un sistema
+                        centralizado.
+                    </td>
+                </tr>
+                <tr class="row4">
+                    <td class="column0 style3 s style3" rowspan="2">F2 </td>
+                    <td class="column1 style3 s style3" rowspan="2"
+                        >Activar
+                    </td>
+                    <td class="column2 style4 s"
+                        >En esta fase se asignan los derechos de acceso a los
+                        usuarios registrados.
+                    </td>
+                </tr>
+                <tr class="row5">
+                    <td class="column2 style4 s"
+                        >Se configura los permisos específicos para que los
+                        usuarios puedan acceder a los recursos necesarios para
+                        sus funciones o tareas.
+                    </td>
+                </tr>
+                <tr class="row6">
+                    <td class="column0 style3 s style3" rowspan="2">F3 </td>
+                    <td class="column1 style3 s style3" rowspan="2"
+                        >Asignar
+                    </td>
+                    <td class="column2 style4 s"
+                        >En esta fase se implementan políticas y controles de
+                        seguridad para garantizar que los usuarios accedan solo
+                        a los recursos y datos a los que tienen autorización.
+                    </td>
+                </tr>
+                <tr class="row7">
+                    <td class="column2 style4 s"
+                        >Esto implica la aplicación de medidas de seguridad y
+                        autenticación.
+                    </td>
+                </tr>
+                <tr class="row8">
+                    <td class="column0 style3 s style3" rowspan="2">F4 </td>
+                    <td class="column1 style3 s style3" rowspan="2"
+                        >Revisar
+                    </td>
+                    <td class="column2 style4 s"
+                        >En esta fase se realiza una supervisión continua de los
+                        accesos de los usuarios.
+                    </td>
+                </tr>
+                <tr class="row9">
+                    <td class="column2 style4 s"
+                        >Se monitorean y auditan las actividades de acceso para
+                        detectar comportamientos extraños o posibles amenazas de
+                        seguridad.
+                    </td>
+                </tr>
+                <tr class="row10">
+                    <td class="column0 style3 s style3" rowspan="2">F5 </td>
+                    <td class="column1 style3 s style3" rowspan="2"
+                        >Modificar/Desactivar
+                    </td>
+                    <td class="column2 style4 s"
+                        >En esta fase se establecen las actividades que se deben
+                        llevar a cabo cuando un usuario deja de estar autorizado
+                        o cambian sus roles.
+                    </td>
+                </tr>
+                <tr class="row11">
+                    <td class="column2 style4 s"
+                        >Se revocan los permisos de acceso, ya sea eliminar o
+                        ajustar los existentes según sea necesario.
+                    </td>
+                </tr>
+                <tr class="row12">
+                    <td class="column0 style4 s">F6 </td>
+                    <td class="column1 style4 s">Eliminar </td>
+                    <td class="column2 style4 s"
+                        >En esta fase se elimina al usuario del sistema, sin
+                        embargo, se mantiene un registro detallado de todas las
+                        actividades de acceso, incluyendo quién accedió a qué
+                        recursos y cuándo.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</Layout>

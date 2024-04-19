@@ -1,0 +1,72 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+<style type="text/css">
+    a.comment-indicator:hover + div.comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em }
+    a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em }
+    div.comment { display:none }
+    table { border-collapse:collapse; page-break-after:always }
+    .gridlines td { border:1px dotted black }
+    .gridlines th { border:1px dotted black }
+    .b { text-align:center }
+    .e { text-align:center }
+    .f { text-align:right }
+    .inlineStr { text-align:left }
+    .n { text-align:right }
+    .s { text-align:left }
+    td.style0 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+    th.style0 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+    td.style1 { vertical-align:middle; text-align:center; border-bottom:3px solid #000000 !important; border-top:3px solid #000000 !important; border-left:3px solid #000000 !important; border-right:3px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Arial'; font-size:11pt; background-color:#000000 }
+    th.style1 { vertical-align:middle; text-align:center; border-bottom:3px solid #000000 !important; border-top:3px solid #000000 !important; border-left:3px solid #000000 !important; border-right:3px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Arial'; font-size:11pt; background-color:#000000 }
+    td.style2 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:3px solid #000000 !important; border-top:3px solid #000000 !important; border-left:3px solid #000000 !important; border-right:3px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Arial'; font-size:11pt; background-color:#808080 }
+    th.style2 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:3px solid #000000 !important; border-top:3px solid #000000 !important; border-left:3px solid #000000 !important; border-right:3px solid #000000 !important; font-weight:bold; color:#FFFFFF; font-family:'Arial'; font-size:11pt; background-color:#808080 }
+    td.style3 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:3px solid #000000 !important; border-top:3px solid #000000 !important; border-left:3px solid #000000 !important; border-right:3px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+    th.style3 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:3px solid #000000 !important; border-top:3px solid #000000 !important; border-left:3px solid #000000 !important; border-right:3px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+    td.style4 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:3px solid #000000 !important; border-top:3px solid #000000 !important; border-left:3px solid #000000 !important; border-right:3px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+    th.style4 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:3px solid #000000 !important; border-top:3px solid #000000 !important; border-left:3px solid #000000 !important; border-right:3px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+    table.sheet0 col.col0 { width:20.3333331pt }
+    table.sheet0 col.col1 { width:49.47777721pt }
+    table.sheet0 col.col2 { width:256.87777483pt }
+    table.sheet0 tr { height:14.5pt }
+    table.sheet0 tr.row0 { height:15.5pt }
+    table.sheet0 tr.row1 { height:15.5pt }
+    table.sheet0 tr.row2 { height:43pt }
+    table.sheet0 tr.row3 { height:43pt }
+    table.sheet0 tr.row4 { height:43pt }
+    table.sheet0 tr.row5 { height:15pt }
+  </style>
+
+<Layout title="Tipos de acceso">
+    <div class="flex-1 flex justify-center items-center flex-col gap-2">
+        <table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines">
+            <col class="col0">
+            <col class="col1">
+            <col class="col2">
+            <tbody>
+              <tr class="row0">
+                <td class="column0 style1 s style1" colspan="3">TIPOS DE ACCESOS<span style="color:#FFFFFF; font-size:11pt"> </span></td>
+              </tr>
+              <tr class="row1">
+                <td class="column0 style2 s">ID<span style="color:#FFFFFF; font-size:11pt"> </span></td>
+                <td class="column1 style2 s">Acceso<span style="color:#FFFFFF; font-family:'Arial'; font-size:11pt"> </span></td>
+                <td class="column2 style2 s">Detalle<span style="color:#FFFFFF; font-family:'Arial'; font-size:11pt"> </span></td>
+              </tr>
+              <tr class="row2">
+                <td class="column0 style3 s">FI<span style="color:#000000; font-family:'Arial'; font-size:11pt"> </span></td>
+                <td class="column1 style4 s">Físico </td>
+                <td class="column2 style4 s">Capacidad de un usuario para ingresar a las instalaciones físicas de la organización, como oficinas, centros de datos, almacenes, etc. </td>
+              </tr>
+              <tr class="row3">
+                <td class="column0 style3 s">LO<span style="color:#000000; font-size:11pt"> </span></td>
+                <td class="column1 style4 s">Lógico </td>
+                <td class="column2 style4 s">Capacidad de un usuario o sistema para acceder a recursos digitales, como sistemas informáticos, redes, aplicaciones y bases de datos. </td>
+              </tr>
+              <tr class="row4">
+                <td class="column0 style3 s">PV<span style="color:#000000; font-size:11pt"> </span></td>
+                <td class="column1 style4 s">Privilegiado </td>
+                <td class="column2 style4 s">Capacidad de un usuario para acceder a recursos digitales mediante ciertos privilegios especiales que van más allá de parámetros normales de acceso. </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</Layout>
