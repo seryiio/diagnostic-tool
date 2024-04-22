@@ -2,6 +2,7 @@
 import "@/styles/globals.css";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import ArrowRight from "@/icons/ArrowRight.astro";
 
 interface Props {
 	title: string;
@@ -42,15 +43,29 @@ const { title } = Astro.props;
 		<section class="flex justify-center items-start py-2 px-8 gap-4">
 			<aside class="flex flex-col gap-y-4 w-60">
 				<span class="font-bold">Componentes</span>
-				<ul class="flex flex-col justify-center items-start gap-y-2">
-					<li><a class="underline" href="tiposdeacceso">Tipos de Accesos</a></li>
-					<li>
-						<a class="underline" href="fasesdelciclodevida"
-							>Fases del ciclo de vida de un acceso</a
+				<ul class="flex flex-col justify-center items-start gap-y-4">
+					<li class="w-full pl-4 pr-8">
+						<a class="flex justify-between items-center w-full gap-4 hover:text-cyan-600 hover:fill-cyan-600" href="/"
+							>Inicio
+							<ArrowRight />
+						</a>
+					</li>
+					<li class="w-full pl-4 pr-8">
+						<a class="flex justify-between items-center w-full gap-4 hover:text-cyan-600 hover:fill-cyan-600" href="tiposdeacceso"
+							>Tipos de Accesos
+							<ArrowRight /></a>
+					</li>
+					<li class="w-full pl-4 pr-8">
+						<a class="flex justify-between items-center w-full gap-4 hover:text-cyan-600 hover:fill-cyan-600" href="fasesdelciclodevida"
+							>Fases de un acceso
+							<ArrowRight /></a
 						>
 					</li>
-					<li>
-						<a class="underline" href="matrizaplicabilidad">Matriz de aplicabilidad</a>
+					<li class="w-full pl-4 pr-8">
+						<a class="flex justify-between items-center w-full gap-4 hover:text-cyan-600 hover:fill-cyan-600" href="matrizaplicabilidad"
+							>Matriz de aplicabilidad
+							<ArrowRight /></a
+						>
 					</li>
 				</ul>
 			</aside>

@@ -1,3 +1,45 @@
-<footer class="flex justify-center items-center bg-black/90 text-white">
+---
+import { AvatarDemo } from "@/components/AvatarDemo";
+
+import Github from "@/icons/Github.astro";
+import LinkedIn from "@/icons/LinkedIn.astro";
+import Mail from "@/icons/Mail.astro";
+---
+
+<footer class="flex flex-col justify-center items-center bg-black/90 text-white">
+    <div class="flex flex-col w-full">
+        <div class="flex justify-center items-center gap-24 py-4">
+            <div class="flex gap-2">
+                <AvatarDemo
+                    url="https://res.cloudinary.com/dxevc9a9v/image/upload/v1713808985/gaeilhmmtr0yorcohv0v.jpg"
+                />
+                <div>
+                    <p>Luis Marlon Ponce Orellana</p>
+                    <div class="flex justify-center items-center gap-2">
+                        <Github url="https://github.com/LuisOdi" />
+                        <LinkedIn
+                            url="https://www.linkedin.com/in/luis-marlon-ponce-orellana-35b541223/"
+                        />
+                        <Mail mail="u201916220@upc.edu.pe" />
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <AvatarDemo
+                    url="https://res.cloudinary.com/dxevc9a9v/image/upload/v1713809200/utbz3k7jj3uy8orisaoa.jpg"
+                />
+                <div>
+                    <p>Sergio Nicolas Huamán Cheng</p>
+                    <div class="flex justify-center items-center gap-2">
+                        <Github url="https://github.com/seryiio" />
+                        <LinkedIn
+                            url="https://www.linkedin.com/in/sergio-nicolas-huam%C3%A1n-cheng-42747a216/"
+                        />
+                        <Mail mail="u201816393@upc.edu.pe" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     © 2024 SAM, ALL RIGHTS RESERVED.
 </footer>
